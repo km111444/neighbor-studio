@@ -1,40 +1,17 @@
- <nav class="ns-navbar navbar navbar-expand-lg navbar-dark bg-dark px-3 ">
-    <a class="navbar-brand" href="/">NeighborStudio</a>
-        <%= render "shared/search_bar" %>
-
-    <div class="navbar-nav ">
-    </div>
-    </div>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="navbar-nav justify-content-center justify-content-lg-between w-100">
-        <div class="d-flex flex-column text-center flex-lg-row">
+<nav class="ns-navbar navbar navbar-expand-lg navbar-dark bg-dark px-3 ">
+  <a class="navbar-brand" href="/">NeighborStudio</a>
+  <%= render "shared/search_bar" %>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+    <div class="nav-item dropdown d-flex justify-content-center">
+      <%= image_tag "https://i.ibb.co/dbxPZsk/avatar-brian.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="navbarDropdown">
+          <b>As a Studio Renter</b>
+          <%= link_to "My Bookings", bookings_path, class: "dropdown-item" %>
+          <b>As a Studio Owner</b>
+          <%= link_to "Manage Bookings", owner_bookings_path, class: "dropdown-item" %>
+          <%= link_to "Manage Studios", owner_studios_path, class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
-        <div class="nav-item dropdown d-flex justify-content-center">
-          <%= image_tag "https://i.ibb.co/dbxPZsk/avatar-brian.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="navbarDropdown">
-            <b>Studio Renter</b>
-            <%= link_to "My Bookings", bookings_path, class: "dropdown-item" %>
-            <b>Studio Owner</b>
-            <%= link_to "Manage Bookings", owner_bookings_path, class: "dropdown-item" %>
-            <%= link_to "Manage Studios", owner_studios_path, class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </div>
-          <div class="dropdown-menu dropdown-menu-end col-xs-1 text-center" aria-labelledby="navbarDropdown">
-            <b>Studio Renter</b>
-            <%= link_to "My Bookings", bookings_path, class: "dropdown-item" %>
-            <b>Studio Owner</b>
-            <%= link_to "Manage Bookings", owner_bookings_path, class: "dropdown-item" %>
-            <%= link_to "Manage Studios", owner_studios_path, class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </div>
-      </div>
     </div>
-  </nav>
+  </div>
+</nav>
